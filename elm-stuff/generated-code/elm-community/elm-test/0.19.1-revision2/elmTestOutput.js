@@ -6735,13 +6735,12 @@ var $author$project$Pangram$letters = $elm$core$Set$fromList(
 	$elm$core$String$toList('ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
 var $elm$core$String$toUpper = _String_toUpper;
 var $author$project$Pangram$isPangram = function (sentence) {
-	return $elm$core$Set$isEmpty(
-		A2(
-			$elm$core$Set$diff,
-			$author$project$Pangram$letters,
-			$elm$core$Set$fromList(
-				$elm$core$String$toList(
-					$elm$core$String$toUpper(sentence)))));
+	var theCase = $elm$core$String$toUpper(sentence);
+	var theString = $elm$core$String$toList(theCase);
+	var theList = $elm$core$Set$fromList(theString);
+	var theDiff = A2($elm$core$Set$diff, theList, $author$project$Pangram$letters);
+	var answer = $elm$core$Set$isEmpty(theDiff);
+	return answer;
 };
 var $elm_explorations$test$Test$Internal$blankDescriptionFailure = $elm_explorations$test$Test$Internal$failNow(
 	{
@@ -6858,7 +6857,7 @@ var $author$project$Tests$tests = A2(
 					$author$project$Pangram$isPangram('Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.'));
 			})
 		]));
-var $author$project$Test$Generated$Main2693731519$main = A2(
+var $author$project$Test$Generated$Main3915407655$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		paths: _List_fromArray(
@@ -6866,7 +6865,7 @@ var $author$project$Test$Generated$Main2693731519$main = A2(
 		processes: 4,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 60913903237935
+		seed: 3004273281852
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
@@ -6877,10 +6876,10 @@ var $author$project$Test$Generated$Main2693731519$main = A2(
 				_List_fromArray(
 					[$author$project$Tests$tests]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main2693731519':{'init':$author$project$Test$Generated$Main2693731519$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main3915407655':{'init':$author$project$Test$Generated$Main3915407655$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-4042.sock";
+var pipeFilename = "/tmp/elm_test-5116.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === "undefined") {
   throw "test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!";

@@ -5,11 +5,28 @@ import Set exposing (..)
 
 isPangram : String -> Bool
 isPangram sentence =
-    String.toUpper sentence
-        |> String.toList
-        |> Set.fromList
-        |> Set.diff letters
-        |> Set.isEmpty
+    let
+        theCase : String
+        theCase =
+            String.toUpper sentence
+
+        theString : List Char
+        theString =
+            String.toList theCase
+
+        theList : Set Char
+        theList =
+            Set.fromList theString
+
+        theDiff : Set Char
+        theDiff =
+            Set.diff theList letters
+
+        answer : Bool
+        answer =
+            Set.isEmpty theDiff
+    in
+    answer
 
 
 letters : Set Char
