@@ -20,7 +20,7 @@ isPangram sentence =
 
         theDiff : Set Char
         theDiff =
-            Set.diff theList letters
+            Set.diff letters theList
 
         answer : Bool
         answer =

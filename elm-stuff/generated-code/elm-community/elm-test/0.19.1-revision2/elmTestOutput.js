@@ -6738,7 +6738,7 @@ var $author$project$Pangram$isPangram = function (sentence) {
 	var theCase = $elm$core$String$toUpper(sentence);
 	var theString = $elm$core$String$toList(theCase);
 	var theList = $elm$core$Set$fromList(theString);
-	var theDiff = A2($elm$core$Set$diff, theList, $author$project$Pangram$letters);
+	var theDiff = A2($elm$core$Set$diff, $author$project$Pangram$letters, theList);
 	var answer = $elm$core$Set$isEmpty(theDiff);
 	return answer;
 };
@@ -6857,7 +6857,7 @@ var $author$project$Tests$tests = A2(
 					$author$project$Pangram$isPangram('Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.'));
 			})
 		]));
-var $author$project$Test$Generated$Main3915407655$main = A2(
+var $author$project$Test$Generated$Main1790946072$main = A2(
 	$author$project$Test$Runner$Node$run,
 	{
 		paths: _List_fromArray(
@@ -6865,7 +6865,7 @@ var $author$project$Test$Generated$Main3915407655$main = A2(
 		processes: 4,
 		report: $author$project$Test$Reporter$Reporter$ConsoleReport($author$project$Console$Text$UseColor),
 		runs: $elm$core$Maybe$Nothing,
-		seed: 3004273281852
+		seed: 137412322184345
 	},
 	$elm_explorations$test$Test$concat(
 		_List_fromArray(
@@ -6876,10 +6876,10 @@ var $author$project$Test$Generated$Main3915407655$main = A2(
 				_List_fromArray(
 					[$author$project$Tests$tests]))
 			])));
-_Platform_export({'Test':{'Generated':{'Main3915407655':{'init':$author$project$Test$Generated$Main3915407655$main($elm$json$Json$Decode$int)(0)}}}});}(this));
+_Platform_export({'Test':{'Generated':{'Main1790946072':{'init':$author$project$Test$Generated$Main1790946072$main($elm$json$Json$Decode$int)(0)}}}});}(this));
 return this.Elm;
 })({});
-var pipeFilename = "/tmp/elm_test-5116.sock";
+var pipeFilename = "/tmp/elm_test-6747.sock";
 // Make sure necessary things are defined.
 if (typeof Elm === "undefined") {
   throw "test runner config error: Elm is not defined. Make sure you provide a file compiled by Elm!";
